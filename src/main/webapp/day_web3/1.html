@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>선택자 연습</title>
+<link href="../css/external.css" rel="stylesheet" text="text.css">
+<style>
+/*internal style sheet */
+ ul{
+	/* 태그선택자 실습*/
+	color:blue;
+	list-style:none;
+	border:1px solid green;
+	padding:10px;
+ }
+ li{
+ 	border:1px solid gray; /*css주석*/
+ 	padding:10px;
+ }
+ *{
+ 	margin:0;
+ 	padding:0;
+ }
+ p{
+ 	font-size: 20px;
+ 	/* margin-top:20px;
+ 	margin-left:10px;
+ 	margin-bottom:20px;
+ 	margin-right:10px */
+ 	margin:20px 10px 20px 10px;
+ 	/* border-width:1px;
+ 	border-style:solid;
+ 	border-color:green */
+ 	border:1px solid green;
+ 	padding:10px 20px 10px 20px;
+ }
+ .aa{ background-color: pink; }
+ li.aa{font-size:30px;}
+ #bb{background-color: #ff00ff;}
+ #container{
+ 	border:5px dotted gray;
+ 	width:800px;
+ 	height:1200px;
+ 	margin:0 auto;/*자동 가운데 정렬*/
+ 	}
+</style>
+</head>
+<body>
+ <div id="container">
+   <img src="../images/umbrella.jpg" alt="시드니 오페라 하우스">
+   <h1>세계 3대 미항</h1>
+   <h2>세계 3대 미항</h2>
+   <ul>
+   <!-- HTML주석 : html tag에서 style==> inline css -->
+    <li style="color:red;">시드니(Sydeney), 호주</li>
+    <li>리우(Rio de Janeiro), 브라질</li>
+    <li class="aa">나폴리(Naples), 이탈리아</li>
+   </ul>
+   <h1>블루베리에 관한 연구</h1>
+   <h2>블루베리아 향산화 효능</h2>
+   <p class="aa">블루베리는 향산화제인 안토시아니 폴리페놀을 다량 포함하고 있습니다.</p>
+   <p id="bb">매사츄세츠 보스톤에 있는......과일이라고 합니다.
+   <h2>블루베리와 노화</h2>
+   <p>만약 내가 사람이 아닌 물고기였다면</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>회원가입</title>
+ <style>
+  label{ 
+  	width:100px; 
+  	display:inline-block; 
+  	background-color:blanchedalmond;
+  	text-align: right;}
+  ul{ list-style:none;}
+ </style>
+ <script>
+  function f(){
+	  alert("[알림]회원가입 되었습니다.");
+	  //alert("×이미 존재하는 아이디거나 양식에 맞지 않습니다.×")
+  }
+ </script>
+</head>
+<body>
+ <form method="post">
+  <fieldset>
+    <legend>회원가입</legend>
+     <ul>
+      <li>
+       <label for="userid">ID</label>
+       <input type="text" id="userid" name="userid">
+      </li>
+      <li>
+       <label for="userpw">PASSWORD</label>
+       <input type="password" id="userpw" name="userpw">
+      </li>
+      <li>
+       <label for="username">Name</label>
+       <input type="text" id="username" name="username">
+      </li>
+      <li>
+       <label for="useremail">E-mail</label>
+       <input type="email" id="useremail" name="useremail" placeholder="qwer@gmail.com">
+      </li>
+      <li>
+       <label for="userphone">Phone</label>
+       <input type="tel" id="userphone" name="userphone" pattern="[01]{3}-[0-9]{3,4}-[0-9]{4}" placeholder="010-0000-0000">
+      </li>
+     </ul>
+    </fieldset>
+    <input type="submit" value="회원가입하기" >
+   </form>
+</body>
+</html>

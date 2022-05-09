@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LOGIN</title>
+ <style>
+  label{ 
+  	width:100px; 
+  	display:inline-block; 
+  	background-color:blanchedalmond;
+  	text-align: right;}
+  ul{ list-style:none;}
+ </style>
+ <script>
+  function f(){
+	  var id = document.getElementById("userid").value;
+	  alert("[알림]"+id+"님 로그인되었습니다.");
+	  //alert("[알림] 로그인 실패")
+  }
+ </script>
+</head>
+<body>
+ <form method="post" onsubmit="f();">
+  <fieldset>
+    <legend>로그인</legend>
+     <ul>
+      <li>
+       <label for="userid">ID</label>
+       <input type="text" id="userid" name="userid">
+      </li>
+      <li>
+       <label for="userpw">PASSWORD</label>
+       <input type="password" id="userpw" name="userpw">
+      </li>
+     </ul>
+    </fieldset>
+    <input type="submit" value="login" >
+   </form>
+</body>
+</html>
