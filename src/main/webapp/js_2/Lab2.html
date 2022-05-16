@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	
+	<script>
+		function Check(a){
+			var str="";
+			if (a == 1){
+				str = "<img src='../images/muffin.png'>";
+			}else if(a==2){
+				str = "<img src='../images/kids.jpg'>";
+			}
+			document.querySelector("#inputImage").innerHTML = str;
+		}	
+	</script>
+ </head>
+ <body>
+ 	<div id="inputImage"></div>
+	<form>
+		<input type="button" value="내사진1" onclick="Check(1)"/>
+		<input type="button" value="내사진2" onclick="Check(2)"/>
+	</form>
+ </body>
+</html>
