@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script>
+	//XMLHttpRequest : Ajax를 하기위한 객체
+	//Ajax : 비동기통신, 현재페이지가 이동되지않고 서버에 요청보내서 받기
+		window.onload = function(){
+			btn1.onclick = function(){
+				var xhr = new XMLHttpRequest();
+				xhr.open("get","../d_js4/mission1_question.html", false); //false:비동기가 아님==동기
+				xhr.send(); //서버에 요청보내기.. 동기방식이면 응답할때까지 기다린다.
+				here.innerHTML = xhr.responseText;
+			};
+			btn2.onclick = function(){
+				var xhr = new XMLHttpRequest();
+				xhr.open("get","../d_js4/mission1_question.html", true); //생략:true(비동기)
+				xhr.onreadystatechange = function( ){
+					if(xhr.readyState==4 && xhr.status==200){ 
+						//readyState==4 : 모든 data를 받음
+						//status==200 : 요청, 응답 성공 (500오류, 404페이지없음)
+						here.innerHTML = xhr.reponseText;
+					}
+				};
+				xhr.send(); //서버에 요청보내기.. 동기방식이면 응답할때까지 기다린다.
+			};
+			btn3.onclick = function(){
+				
+			}
+		};
+	</script>
+ </head>
+ <body>
+ 	<h1>Ajax연습</h1>
+ 	<button id="btn1">Ajax1(동기)</button>
+ 	<button id="btn2">Ajax2(비동기)</button>
+ 	<button id="btn3">Ajax3(jsp요청)</button>
+ 	<hr>
+ 	<input>
+ 	<div id="here">여기</div>
+ </body>
+</html>
