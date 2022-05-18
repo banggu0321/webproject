@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		//window.onload = function(){ alert("aa");};
+		//window.onload = function(){ alert("bb");};
+		
+		//$(대상).함수이름( );
+		//$(document).ready(function(){ alert("cc");});
+		//$(document).ready(function(){ alert("dd");});
+		//$(function(){alert("ee");});
+		$(function(){
+			$("#btn1").click(function(){
+				console.log(this);
+				console.log($(this));
+				$(this).css("color", "red"); //jQuery
+				this.style.border = "2px solid blue"; //JS
+				
+				$("h1").css("color", "red");
+				$("h1").css({"background-color":"orange",
+							 "border":"2px solid blue"});
+				$("#here").css("border","2px solid blue");
+				$(".aa").css("border","2px solid green");
+				$("input:text").css("background-color","pink");
+				$("input:button").css("background-color","navy");
+				var aa = $("select>option:selected").val();
+				$("#here").html("<h1>"+aa+"</h1>");
+				
+				$("select>option:even").css("background-color","yellow");
+				$("select>option:odd").css("background-color","green");
+				
+				$("p:contains('태그')").css("background-color","yellow");
+			});
+			$("#btn2").click(function(){		
+				if($("h1").hasClass("on")){
+					$("h1").removeClass("on");	
+				}else{
+					$("h1").addClass("on");	
+				}		
+			});
+		});
+		
+	</script>
+	<style>
+		.on{
+			background-color:orange;
+			color:blue;
+		}
+	</style>
+ </head>
+ <body>
+ 	<button id="btn1">스타일 변경하기</button>
+ 	<button id="btn2">스타일ON/OFF</button>
+ 	<h1>jQuery연습</h1>
+ 	<h1>jQuery연습</h1>
+ 	<h2 class="aa">jQuery연습</h2>
+ 	<div id="here">여기</div>
+ 	<p>p태그</p>
+ 	<p class="aa">p임</p>
+ 	<p>p태그</p>
+ 	<p class="aa">p태그</p>
+ 	<p class="aa">p임</p>
+ 	<input>
+ 	<input type="text">
+ 	<input type="text">
+ 	<input type="button" value="버튼">
+ 	<select>
+ 		<option>월</option>
+ 		<option>화</option>
+ 		<option>수</option>
+ 		<option selected="selected" value="토요일">토</option>
+ 		<option>일</option>
+ 	</select>
+ </body>
+</html>

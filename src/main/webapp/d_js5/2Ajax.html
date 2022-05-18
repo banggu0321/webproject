@@ -26,7 +26,40 @@
 				xhr.send(); //서버에 요청보내기.. 동기방식이면 응답할때까지 기다린다.
 			};
 			btn3.onclick = function(){
-				
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						here.innerHTML = xhr.responseText;
+					}
+				};
+				var param = `name=${myname.value}&phone=${myphone.value}`;
+				xhr.open("get",`2.jsp?${param}`);
+				xhr.send();
+				alert("aaaa");
+			}
+			btn4.onclick = function(){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						here.innerHTML = xhr.responseText;
+						console.log(typeof(xhr.reponseText));
+						//string->object
+						var obj = JSON.parse(xhr.reponseText);
+						//html->javascript
+						var output = `
+								<ul>
+									<li>${obj.name}</li>
+									<li>${obj.phone}</li>
+									<li>${obj.address}</li>
+									<li>${obj.age}</li>
+								</ul>
+								`;
+						here.innerHTML += output;
+					}
+				};
+				var param = `name=${myname.value}&phone=${myphone.value}`;
+				xhr.open("get",`2.jsp?${param}`);
+				xhr.send();
 			}
 		};
 	</script>
@@ -35,7 +68,9 @@
  	<h1>Ajax연습</h1>
  	<button id="btn1">Ajax1(동기)</button>
  	<button id="btn2">Ajax2(비동기)</button>
- 	<button id="btn3">Ajax3(jsp요청)</button>
+ 	<input type="text">
+ 	<button id="btn3">Ajax3(jsp요청..HTML받기)</button>
+ 	<button id="btn4">Ajax3(jsp요청..JOSN받기)</button>
  	<hr>
  	<input>
  	<div id="here">여기</div>
