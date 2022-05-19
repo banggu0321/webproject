@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").toggle(1000,function(){
+                    $("#here").html("END");
+                });
+            });
+        });
+    </script>
+ </head>
+ <body>
+ 	<button>dd</button>
+ 	<button>dd</button>
+    <p>dd</p>
+    <p>dd</p>
+    <div id="here"></div>
+ </body>
+</html>
